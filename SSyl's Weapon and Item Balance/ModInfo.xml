@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xml>
+	<ModInfo>
+		<Name value="[SSyl] Weapon and Item Balancing" />
+		<Description value="Balances loot so the item level is more relevant" />
+		<Author value="SSyl" />
+		<Version value="0.1" />
+		<Website value="" />
+	</ModInfo>
+</xml>

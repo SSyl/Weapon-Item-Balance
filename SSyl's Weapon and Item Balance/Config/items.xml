@@ -1,0 +1,87 @@
+<config>
+	<!-- 
+			The value below is the random range for weapon damage. By default, it's -0.15 and 0.15, meaning a weapon can do anywhere between 15% less its base damage or 15% more of its base damage. 
+			NOTE: This seems to apply AFTER the tier bonus rather than before.
+	-->
+
+	<!-- These are all the wepaons that the code below should affect:
+		gunToolNailgun
+		gunPistol
+		gun44Magnum
+		gunSMG5
+		gunBlunderbuss
+		gunDoubleBarrelShotgun
+		gunPumpShotgun
+		gunHuntingRifle
+		gunMR10
+		gunAK47
+		gunTacticalAR
+		gunM60
+		gunRocketLauncher
+		gunBowPrimitive
+		gunBowWooden
+		gunBowCompound
+		gunCrossbowIron
+		gunCrossbowCompound
+		gunJunkTurret
+		gunPistolAdmin
+	-->
+
+	<set xpath="/items/item[starts-with(@name,'gun')]/effect_group[starts-with(@name,'gun')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='-.15,.15']/@value">0,.10</set> 
+	<!-- Manually sets to tiers of items from 2 to 6. I do this so I can manually change the damage for tier 4, as seem in the entry after this -->
+	<set xpath="/items/item[starts-with(@name,'gun')]/effect_group[starts-with(@name,'gun')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,6']/@tier">2,3,4,5,6</set>
+	<!-- Below sets the damage bonus for each level/tier of weapon. Only differene from default is that tier 4 weapons gain a 35% damage buff rather than 30%. I did this since it doesn't gain a mod slot going from 3 to 4. -->
+	<set xpath="/items/item[starts-with(@name,'gun')]/effect_group[starts-with(@name,'gun')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,3,4,5,6']/@value">.1,.2,.35,.4,.5</set>
+
+
+	<!-- This should be all the Melee Tools that my code affects. Just noting it here for reference:
+		meleeToolStoneAxe
+		meleeToolStoneAxeTazas
+		meleeToolClawHammer
+		meleeToolFireaxeIron
+		meleeToolFireaxeSteel
+		meleeToolPickaxeIron
+		meleeToolPickaxeSteel
+		meleeToolShovelStone
+		meleeToolShovelIron
+		meleeToolShovelSteel
+		meleeToolChainsaw
+		meleeToolAuger
+		meleeToolWrench
+		meleeToolKnifeBone
+		meleeToolKnifeIron
+		meleeToolKnifeCandy
+		meleeToolKnifeMachete
+		meleeClubWood
+		meleeClubIron
+		meleeClubCandy
+		meleeClubBaseballBat
+		meleeStunBaton
+		meleeThrownSpearStone
+		meleeThrownSpearIron
+		meleeThrownSpearSteel
+		meleeToolSledgehammerStone
+		meleeToolSledgehammerIron
+		meleeToolSledgehammerSteel
+		meleeKnucklesLeather
+		meleeKnucklesIron
+		meleeKnucklesSteel
+		meleeToolHoeIron //Removed
+		meleeToolFlashlight02 //Removed
+		meleeToolTorch //Removed
+		meleeToolWireTool //Removed
+		meleeToolPaintTool //Removed
+		meleeToolBlockReplaceTool //Removed
+		meleeToolPaintToolAdmin //Removed
+	-->
+
+	<!-- Melee Damage to Zombies/Entities -->
+	<set xpath="/items/item[@name != 'meleeToolPaintTool' and @name != 'meleeToolPaintToolAdmin' and @name != 'meleeToolTorch' and @name != 'meleeToolWireTool' and @name != 'meleeToolBlockReplaceTool' and @name != 'meleeToolFlashlight02' and @name != 'meleeToolHoeIron' and starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name, 'meleeKnuckles') or starts-with(@name, 'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='-.15,.15']/@value">0,.10</set> 
+	<set xpath="/items/item[@name != 'meleeToolPaintTool' and @name != 'meleeToolPaintToolAdmin' and @name != 'meleeToolTorch' and @name != 'meleeToolWireTool' and @name != 'meleeToolBlockReplaceTool' and @name != 'meleeToolFlashlight02' and @name != 'meleeToolHoeIron' and starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name, 'meleeKnuckles') or starts-with(@name, 'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,6']/@tier">2,3,4,5,6</set>
+	<set xpath="/items/item[@name != 'meleeToolPaintTool' and @name != 'meleeToolPaintToolAdmin' and @name != 'meleeToolTorch' and @name != 'meleeToolWireTool' and @name != 'meleeToolBlockReplaceTool' and @name != 'meleeToolFlashlight02' and @name != 'meleeToolHoeIron' and starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name, 'meleeKnuckles') or starts-with(@name, 'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,3,4,5,6']/@value">.1,.2,.3,.4,.5</set>
+	<!-- Damage to Blocks -->
+	<set xpath="/items/item[@name != 'meleeToolPaintTool' and @name != 'meleeToolPaintToolAdmin' and @name != 'meleeToolTorch' and @name != 'meleeToolWireTool' and @name != 'meleeToolBlockReplaceTool' and @name != 'meleeToolFlashlight02' and @name != 'meleeToolHoeIron' and starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name, 'meleeKnuckles') or starts-with(@name, 'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='BlockDamage' and @operation='perc_add' and @value='-.15,.15']/@value">0,.10</set> 
+	<set xpath="/items/item[@name != 'meleeToolPaintTool' and @name != 'meleeToolPaintToolAdmin' and @name != 'meleeToolTorch' and @name != 'meleeToolWireTool' and @name != 'meleeToolBlockReplaceTool' and @name != 'meleeToolFlashlight02' and @name != 'meleeToolHoeIron' and starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name, 'meleeKnuckles') or starts-with(@name, 'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='BlockDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,6']/@tier">2,3,4,5,6</set>
+	<set xpath="/items/item[@name != 'meleeToolPaintTool' and @name != 'meleeToolPaintToolAdmin' and @name != 'meleeToolTorch' and @name != 'meleeToolWireTool' and @name != 'meleeToolBlockReplaceTool' and @name != 'meleeToolFlashlight02' and @name != 'meleeToolHoeIron' and starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name, 'meleeKnuckles') or starts-with(@name, 'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='BlockDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,3,4,5,6']/@value">.1,.2,.3,.4,.5</set>
+
+</config>
