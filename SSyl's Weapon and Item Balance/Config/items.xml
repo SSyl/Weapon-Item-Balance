@@ -74,7 +74,7 @@
 	-->
 
 	<!-- Melee and Block Damage -->
-	<set xpath="/items/item[starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name,'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[(@name='EntityDamage' and not @name='BlockDamage') or () and @operation='perc_add' and @value='-.15,.15']/@value">0,.10</set>
+	<set xpath="/items/item[starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name,'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[(@name='EntityDamage' or @name='BlockDamage') and @operation='perc_add' and @value='-.15,.15']/@value">0,.10</set>
 	<!-- Manually sets to tiers of items from 2 to 6. I do this so I can manually change the damage for each individual tier as seen in the entry after this -->
 	<set xpath="/items/item[starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name,'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[(@name='EntityDamage' or @name='BlockDamage') and @operation='perc_add' and @value='.1,.5' and @tier='2,6']/@tier">2,3,4,5,6</set>
 	<!-- Below sets the damage bonus for each level/tier of a weapon -->
