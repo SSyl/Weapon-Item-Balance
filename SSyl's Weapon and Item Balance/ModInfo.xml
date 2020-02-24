@@ -3,7 +3,7 @@
 <xml>
 	<ModInfo>
 		<Name value="[SSyl] Weapon and Item Balancing" />
-		<Description value="Balances loot so the item level is more relevant" />
+		<Description value="Balances loot to make item levels more relevant and less random." />
 		<Author value="SSyl" />
 		<Version value="0.1" />
 		<Website value="" />
