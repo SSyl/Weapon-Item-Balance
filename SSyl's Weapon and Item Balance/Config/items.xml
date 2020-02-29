@@ -29,7 +29,7 @@
 	<!-- Below sets the damage bonus for each level/tier of a weapon -->
 	<set xpath="/items/item[starts-with(@name,'gun')]/effect_group[starts-with(@name,'gun')]/passive_effect[@name='EntityDamage' and @operation='perc_add' and @value='.1,.5' and @tier='2,3,4,5,6']/@value">.10,.20,.40,.55,.75</set>
 	<!-- Additional damage added by mods -->
-	<set xpath="/items/item[starts-with(@name,'gun')]/effect_group[starts-with(@name,'gun')]/passive_effect[@name='ModPowerBonus' and @operation='perc_add' and @value='.10' and contains(@tags,'EntityDamage')]">0.05</set>
+	<set xpath="/items/item[starts-with(@name,'gun')]/effect_group[starts-with(@name,'gun')]/passive_effect[@name='ModPowerBonus' and @operation='perc_add' and @value='.10' and contains(@tags,'EntityDamage')]/@value">0.05</set>
 
 
 	<!-- This should be all the Melee Weapons and tools that my code affects. Just noting it here for reference:
@@ -81,6 +81,6 @@
 	<set xpath="/items/item[starts-with(@name,'meleeTool') or starts-with(@name,'meleeClub') or starts-with(@name,'meleeStun') or starts-with(@name,'meleeKnuckles') or starts-with(@name,'meleeThrown')]/effect_group[starts-with(@name,'melee')]/passive_effect[(@name='EntityDamage' or @name='BlockDamage') and @operation='perc_add' and @value='.1,.5' and @tier='2,3,4,5,6']/@value">.10,.20,.40,.55,.75</set>
 
 	<!-- Additional damage added by mods -->
-	<set xpath="/items/item[starts-with(@name,'melee')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='ModPowerBonus' and @operation='perc_add' and @value='.10' and contains(@tags,'EntityDamage')]">0.05</set>
+	<set xpath="/items/item[starts-with(@name,'melee')]/effect_group[starts-with(@name,'melee')]/passive_effect[@name='ModPowerBonus' and @operation='perc_add' and @value='.10' and contains(@tags,'EntityDamage')]/@value">0.05</set>
 
 </config>
